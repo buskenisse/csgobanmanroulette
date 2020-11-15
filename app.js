@@ -1,3 +1,8 @@
+//Music
+var m249load = new Audio("snd/M249.mp3");
+var bizonload = new Audio("snd/bizon.mp3");
+
+
 //Terrorist Weapons
 function weapont() {
 
@@ -5,6 +10,14 @@ function weapont() {
   var weaponNames = ["Glock 18", "P250", "Tec-9/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "MAC-10", "PP-Bizon", "MP7/MP5-SD", "UMP-45", "P90", "Galil AR", "AK-47", "SG 553", "SSG 08", "AWP", "G3SG1", "Nova", "XM1014", "Sawed-Off", "M249", "NEGEV", "Knife"];
   var chosenWepT = weaponNames[randomNum];
   document.getElementById('twep').innerHTML = chosenWepT;
+
+  if (chosenWepT === "M249") {
+    m249load.play();
+  }
+  if (chosenWepT === "PP-Bizon") {
+    bizonload.play();
+
+  }
 }
 
 /*Bad Weapon Selector
@@ -84,6 +97,14 @@ function weaponct() {
   var number2 = ["P2000/USP-S", "P250", "Five-SeveN/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "MP9", "PP-Bizon", "MP7/MP5-SD", "UMP-45", "P90", "FAMAS", "M4A4/M4A1-S", "AUG", "SSG 08", "AWP", "SCAR-20", "Nova", "XM1014", "MAG-7", "M249", "Negev", "Knife"]
   var weaponSel = number2[randomNum2];
   document.getElementById('ctwep').innerHTML = weaponSel;
+  if (weaponSel === "M249") {
+    m249load.play();
+
+  }
+
+  if (weaponSel === "PP-Bizon"); {
+    bizonload.play();
+  }
 
   }
 
@@ -140,4 +161,12 @@ function mapdecider() {
   var shitbenmen = new Audio("sbm/sbm.mp3");
   function sbm() {
   shitbenmen.play();
+}
+
+
+function stopmusic() {
+  bizonload.pause();
+  bizonload.currentTime = 0;
+  m249load.pause();
+  m249load.currentTime = 0;
 }
