@@ -102,7 +102,7 @@ function weaponct() {
 
   }
 
-  if (weaponSel === "PP-Bizon"); {
+  if (weaponSel === "PP-Bizon") {
     bizonload.play();
   }
 
