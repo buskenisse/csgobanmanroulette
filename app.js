@@ -1,10 +1,13 @@
 //Terrorist Weapons
 function weapont() {
 
-  var randomNum = Math.floor(Math.random() * 19) + 1;
+  var randomNum = Math.floor(Math.random() * 22);
+  var weaponNames = ["Glock 18", "P250", "Tec-9/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "MAC-10", "PP-Bizon", "MP7/MP5-SD", "UMP-45", "P90", "Galil AR", "AK-47", "SG 553", "SSG 08", "AWP", "G3SG1", "Nova", "XM1014", "Sawed-Off", "M249", "NEGEV", "Knife"];
+  var chosenWepT = weaponNames[randomNum];
+  document.getElementById('twep').innerHTML = chosenWepT;
+}
 
-  var number = (randomNum);
-
+/*Bad Weapon Selector
   if (number == 1) {
     alert("Glock 18");
 
@@ -73,14 +76,14 @@ function weapont() {
   }
 }
 
-
+*/
 
 //Counter-Terrorist Weapons
 function weaponct() {
   var randomNum2 = Math.floor(Math.random() * 22)
   var number2 = ["P2000/USP-S", "P250", "Five-SeveN/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "MP9", "PP-Bizon", "MP7/MP5-SD", "UMP-45", "P90", "FAMAS", "M4A4/M4A1-S", "AUG", "SSG 08", "AWP", "SCAR-20", "Nova", "XM1014", "MAG-7", "M249", "Negev", "Knife"]
   var weaponSel = number2[randomNum2];
-  alert(weaponSel);
+  document.getElementById('ctwep').innerHTML = weaponSel;
 
   }
 
@@ -125,14 +128,16 @@ function mapdecider() {
   var age = map9[rand9];
   var off = map10[rand10];
 
-  //Alert Message
+  /*Old Alert Message
   alert(mir + inf + ove + ver + nuk + tra + dus + cac + age + off);
+  */
+  document.getElementById('mapdec').innerHTML = (mir + inf + ove + ver + nuk + tra + dus + cac + age + off);
 }
 
 
 
-//Shitbanmanplayer
-var shitbenmen = new Audio("sbm/sbm.mp3");
-function sbm() {
+  //Shitbanmanplayer
+  var shitbenmen = new Audio("sbm/sbm.mp3");
+  function sbm() {
   shitbenmen.play();
 }
