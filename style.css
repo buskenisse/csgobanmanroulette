@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.ctbutton {
+#ctbuttonid {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -11,13 +11,12 @@
   background-position: center;
   background-size: 205px;
   text-align: center;
-  margin-left: 10%;
   border-width: 10px;
   border-color: gray;
   border-style: solid;
 }
 
-.tbutton  {
+/*.tbutton  {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -30,7 +29,7 @@
   border-color: #BDB76B;
   border-style: solid;
 }
-
+*/
 .button {
   width: 200px;
   height: 200px;
@@ -45,23 +44,37 @@
   border-style: solid;
 }
 
-.buttontext {
+#twep {
   position: relative;
   top: 10px;
   right: 150px;
   color: white;
+  background-image: url(https://imttrade.com/wp-content/uploads/2016/12/white-background-2.jpg);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: cover;
 }
-.buttontext2 {
+#ctwep {
   position: relative;
-  top: -45px;
-  right: -150px;
-  color: white;
+  text-align: center;
+  background-image: url(https://imttrade.com/wp-content/uploads/2016/12/white-background-2.jpg);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: cover;
+
 
 }
 
 .stopmusic {
   position: relative;
-  top: -1190px;
+  top: -1140px;
+  right: -1735px;
+  height: 30px;
+}
+
+.homebutton {
+  position: relative;
+  top: -1140px;
   right: 10px;
   height: 30px;
 }
@@ -98,5 +111,29 @@
 .wrapper {
   margin-left: auto;
   margin-right: auto;
-  width: 1000px;
+  width: 960px;
+}
+
+.m249text {
+  position: relative;
+  text-align: center;
+  left: 835px;
+  top: 32%;
+/background-image: url(https://i.pinimg.com/originals/e5/89/95/e5899572ecace2b0895b36db7703a001.gif);
+-webkit-background-clip: text;
+color: transparent;
+z-index: -1;
+
+}
+
+.bizontext {
+  position: relative;
+  text-align: center;
+  left: 835px;
+  top: 32%;
+background-image: url(https://i.pinimg.com/originals/e5/89/95/e5899572ecace2b0895b36db7703a001.gif);
+-webkit-background-clip: text;
+color: transparent;
+z-index: -1
+
 }

@@ -10,14 +10,19 @@
 
     </script>
 
+
     <div class="wrapper">
+
+
+
+
 
     <div class="buttons">
 
 
-    <button class="tbutton"  type="button" name="weapont" onclick="weapont()"></button>
+  <!--  <button class="tbutton"  type="button" name="weapont" onclick="weapont()"></button> -->
 
-    <button class="ctbutton" type="button" name="weaponct" onclick="weaponct()"></button>
+    <button class="ctbutton" type="button" name="weaponct" onclick="weaponct()" id="ctbuttonid"></button>
     <br>
 
 
@@ -27,8 +32,12 @@
     </div>
 
 
-        <h1 class="buttontext" id="twep">T Weapon</h1>
+
+    <!--    <h1 class="buttontext" id="twep">T Weapon</h1> -->
         <h1 class="buttontext2" id="ctwep">CT Weapon</h1>
+        <input type="checkbox" name="" value="" id="pistolcheck" onclick="pistolRoundCheck()">Pistol Round?</input>
+        <button type="button" name="button" id="switchteambutton" onclick="teamSwitcher()">Switch To T</button>
+
 
     <br>
     <br>
@@ -49,7 +58,8 @@
 
           </div>
 
-          <button class="stopmusic" type="button" name="stopmusic" onclick="stopmusic()">Music off</button>
+
+
 
   </body>
 </html>

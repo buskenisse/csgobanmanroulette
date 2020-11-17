@@ -1,24 +1,186 @@
-//Music
-var m249load = new Audio("snd/M249.mp3");
-var bizonload = new Audio("snd/bizon.mp3");
+//Music And Sounds
+var m249load = new Audio("sou/csgo/M249.mp3");
+var bizonload = new Audio("sou/csgo/bizon.mp3");
+var knifeload = new Audio("sou/csgo/knife.mp3");
+var p90load = new Audio("sou/csgo/p90.mp3");
+
+//Weapon Variable Names
+
+//Pistol Round Variable Names
+var pistolT = ["Glock 18", "P250", "Tec-9/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "Knife"];
+var pistolCT = ["P2000/USP-S", "Five-SeveN/CZ75-Auto", "P250", "Desert Eagle/R8 Revolver", "Dual Berettas", "Knife"];
+
+//All Weapon Variable Names
+var weaponNamesT = ["Glock 18", "P250", "Tec-9/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "MAC-10", "PP-Bizon", "MP7/MP5-SD", "UMP-45", "P90", "Galil AR", "AK-47", "SG 553", "SSG 08", "AWP", "G3SG1", "Nova", "XM1014", "Sawed-Off", "M249", "Negev", "Knife"];
+var weaponNamesCT = ["P2000/USP-S", "P250", "Five-SeveN/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "MP9", "PP-Bizon", "MP7/MP5-SD", "UMP-45", "P90", "FAMAS", "M4A4/M4A1-S", "AUG", "SSG 08", "AWP", "SCAR-20", "Nova", "XM1014", "MAG-7", "M249", "Negev", "Knife"]
+
+//Function To Stop All Music
+function stopMusic() {
+  bizonload.pause();
+  bizonload.currentTime = 0;
+  m249load.pause();
+  m249load.currentTime = 0;
+  p90load.pause();
+  p90load.currentTime = 0;
+}
+
+//Standard Variables For Weapon Roulette
+var pistolRound = false;
+var counterTerroristSide = true;
+
+//Random Number Variables
+var randomNumPistol;
+var randomNumAll;
+
+//Checkbox Loader
 
 
-//Terrorist Weapons
-function weapont() {
-
-  var randomNum = Math.floor(Math.random() * 22);
-  var weaponNames = ["Glock 18", "P250", "Tec-9/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "MAC-10", "PP-Bizon", "MP7/MP5-SD", "UMP-45", "P90", "Galil AR", "AK-47", "SG 553", "SSG 08", "AWP", "G3SG1", "Nova", "XM1014", "Sawed-Off", "M249", "NEGEV", "Knife"];
-  var chosenWepT = weaponNames[randomNum];
-  document.getElementById('twep').innerHTML = chosenWepT;
-
-  if (chosenWepT === "M249") {
-    m249load.play();
-  }
-  if (chosenWepT === "PP-Bizon") {
-    bizonload.play();
-
+function pistolRoundCheck() {
+  var pistolRoundCheckBox = document.getElementById("pistolcheck");
+  if (pistolRoundCheckBox.checked == true) {
+    pistolRound = true;
+  } else {
+    pistolRound = false;
   }
 }
+
+//Team Changer
+function teamSwitcher() {
+if (counterTerroristSide == true) {
+  counterTerroristSide = false;
+  document.getElementById('switchteambutton').innerHTML = "Switch to CT";
+  document.getElementById('ctbuttonid').style.backgroundImage = "url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQtkmNj-34BqO0SlUPAMPTOjzjUhiOtTkN97A&usqp=CAU)";
+} else if (counterTerroristSide == false) {
+  document.getElementById('switchteambutton').innerHTML = "Switch to T";
+  document.getElementById('ctbuttonid').style.backgroundImage = "url(https://vignette1.wikia.nocookie.net/cswikia/images/4/4c/Csgo_CT_icon_alt.png/revision/latest?cb=20151222191721)";
+  counterTerroristSide = true;
+
+}
+}
+
+//OUTDATED
+//Terrorist Weapons
+/*function weapont() {
+
+  //Only Pistols
+if (pistolRoundT == true) {
+
+var randomNumPistolT = Math.floor(Math.random() * 6);
+var chosenPistolT = pistolT[randomNumPistolT];
+chosenWepT = chosenPistolT;
+document.getElementById('twep').innerHTML = chosenWepT;
+  pistolRoundT = false;
+
+//All Weapons
+} else if (pistolRoundT == false){
+
+  var randomNumAllT = Math.floor(Math.random() * 22);
+  var chosenWepT = weaponNamesT[randomNumAllT];
+  document.getElementById('twep').innerHTML = chosenWepT;
+    document.getElementById('twep').style.backgroundImage = "url(https://imttrade.com/wp-content/uploads/2016/12/white-background-2.jpg)" //Changes Color of text
+      bizonload.pause();
+      bizonload.currentTime = 0; //Sets time of music to 0
+      m249load.pause();
+      m249load.currentTime = 0;
+}
+//M249 Rainbow Text And Music
+  if (chosenWepT === "M249") {
+    m249load.play();
+document.getElementById('twep').innerHTML = "M249 TIME!!";
+  document.getElementById('twep').style.backgroundImage = "url(https://i.pinimg.com/originals/e5/89/95/e5899572ecace2b0895b36db7703a001.gif)"
+  }
+
+//PP-Bizon Rainbow Text And Music
+  if (chosenWepT === "PP-Bizon") {
+    bizonload.play();
+document.getElementById('twep').innerHTML = "PP-BIZON TIME!!";
+  document.getElementById('twep').style.backgroundImage = "url(https://i.pinimg.com/originals/e5/89/95/e5899572ecace2b0895b36db7703a001.gif)"
+  }
+
+  if (chosenWepT === "Knife") {
+    knifeload.play();
+  }
+}
+*/
+
+//Counter-Terrorist Weapons
+function weaponct() {
+
+
+//All Weapons
+  if (pistolRound == true && counterTerroristSide == true) {
+  randomNumPistol = Math.floor(Math.random() * 6);
+  var chosenWep = pistolCT[randomNumPistol];
+  document.getElementById('ctwep').innerHTML = chosenWep;
+  document.getElementById('ctwep').style.backgroundImage = "url(img/csgo/blank.jpg)"
+  bizonload.pause();
+  bizonload.currentTime = 0;
+  m249load.pause();
+  m249load.currentTime = 0;
+  p90load.pause();
+  p90load.currentTime = 0;
+
+} else if (pistolRound == true && counterTerroristSide == false){
+  randomNumPistol = Math.floor(Math.random() * 6);
+  var chosenWep = pistolT[randomNumPistol];
+  document.getElementById('ctwep').innerHTML = chosenWep;
+  document.getElementById('ctwep').style.backgroundImage = "url(img/csgo/blank.jpg)"
+  bizonload.pause();
+  bizonload.currentTime = 0;
+  m249load.pause();
+  m249load.currentTime = 0;
+  p90load.pause();
+  p90load.currentTime = 0;
+
+} else if (pistolRound == false && counterTerroristSide == true ){
+  randomNumAll = Math.floor(Math.random() * 22)
+  var chosenWep = weaponNamesCT[randomNumAll];
+    document.getElementById('ctwep').style.backgroundImage = "url(img/csgo/blank.jpg)"
+  document.getElementById('ctwep').innerHTML = chosenWep;
+  bizonload.pause();
+  bizonload.currentTime = 0;
+  m249load.pause();
+  m249load.currentTime = 0;
+  p90load.pause();
+  p90load.currentTime = 0;
+
+} else if (pistolRound == false && counterTerroristSide == false ){
+  randomNumAll = Math.floor(Math.random() * 22)
+  var chosenWep = weaponNamesT[randomNumAll];
+    document.getElementById('ctwep').style.backgroundImage = "url(img/csgo/blank.jpg)"
+  document.getElementById('ctwep').innerHTML = chosenWep;
+  bizonload.pause();
+  bizonload.currentTime = 0;
+  m249load.pause();
+  m249load.currentTime = 0;
+  p90load.pause();
+  p90load.currentTime = 0;
+
+}
+
+//M249 Rainbow Text And Music
+   if (chosenWep === "M249") {
+    m249load.play();
+document.getElementById('ctwep').innerHTML = "M249 TIME!!";
+document.getElementById('ctwep').style.backgroundImage = "url(img/csgo/rainbow.gif)"
+  }
+
+//PP-Bizon Rainbow Text And Music
+  if (chosenWep === "PP-Bizon") {
+    bizonload.play();
+document.getElementById('ctwep').innerHTML = "PP-BIZON TIME!!";
+document.getElementById('ctwep').style.backgroundImage = "url(img/csgo/rainbow.gif)"
+  }
+//Knife Sound
+if (chosenWep === "Knife") {
+  knifeload.play();
+}
+if (chosenWep === "P90") {
+  p90load.play();
+}
+  }
+
+
 
 /*Bad Weapon Selector
   if (number == 1) {
@@ -91,24 +253,6 @@ function weapont() {
 
 */
 
-//Counter-Terrorist Weapons
-function weaponct() {
-  var randomNum2 = Math.floor(Math.random() * 22)
-  var number2 = ["P2000/USP-S", "P250", "Five-SeveN/CZ75-Auto", "Dual Berettas", "Desert Eagle/R8 Revolver", "MP9", "PP-Bizon", "MP7/MP5-SD", "UMP-45", "P90", "FAMAS", "M4A4/M4A1-S", "AUG", "SSG 08", "AWP", "SCAR-20", "Nova", "XM1014", "MAG-7", "M249", "Negev", "Knife"]
-  var weaponSel = number2[randomNum2];
-  document.getElementById('ctwep').innerHTML = weaponSel;
-  if (weaponSel === "M249") {
-    m249load.play();
-
-  }
-
-  if (weaponSel === "PP-Bizon") {
-    bizonload.play();
-  }
-
-  }
-
-
 
 //Random Map Selector
 function mapdecider() {
@@ -158,15 +302,13 @@ function mapdecider() {
 
 
   //Shitbanmanplayer
-  var shitbenmen = new Audio("sbm/sbm.mp3");
+  var shitbenmen = new Audio("../sou/csgo/sbm.mp3");
   function sbm() {
   shitbenmen.play();
 }
 
+function  homeButton() {
+  window.open("home.html", "_self");
 
-function stopmusic() {
-  bizonload.pause();
-  bizonload.currentTime = 0;
-  m249load.pause();
-  m249load.currentTime = 0;
+
 }
