@@ -84,7 +84,7 @@
   background-color: gray;
   background-image: url("https://steamcdn-a.akamaihd.net/apps/csgo/blog/images/wallpaper_nologo.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .button:hover {
