@@ -58,50 +58,6 @@ if (counterTerroristSide == true) {
 }
 }
 
-//OUTDATED
-//Terrorist Weapons
-/*function weapont() {
-
-  //Only Pistols
-if (pistolRoundT == true) {
-
-var randomNumPistolT = Math.floor(Math.random() * 6);
-var chosenPistolT = pistolT[randomNumPistolT];
-chosenWepT = chosenPistolT;
-document.getElementById('twep').innerHTML = chosenWepT;
-  pistolRoundT = false;
-
-//All Weapons
-} else if (pistolRoundT == false){
-
-  var randomNumAllT = Math.floor(Math.random() * 22);
-  var chosenWepT = weaponNamesT[randomNumAllT];
-  document.getElementById('twep').innerHTML = chosenWepT;
-    document.getElementById('twep').style.backgroundImage = "url(https://imttrade.com/wp-content/uploads/2016/12/white-background-2.jpg)" //Changes Color of text
-      bizonload.pause();
-      bizonload.currentTime = 0; //Sets time of music to 0
-      m249load.pause();
-      m249load.currentTime = 0;
-}
-//M249 Rainbow Text And Music
-  if (chosenWepT === "M249") {
-    m249load.play();
-document.getElementById('twep').innerHTML = "M249 TIME!!";
-  document.getElementById('twep').style.backgroundImage = "url(https://i.pinimg.com/originals/e5/89/95/e5899572ecace2b0895b36db7703a001.gif)"
-  }
-
-//PP-Bizon Rainbow Text And Music
-  if (chosenWepT === "PP-Bizon") {
-    bizonload.play();
-document.getElementById('twep').innerHTML = "PP-BIZON TIME!!";
-  document.getElementById('twep').style.backgroundImage = "url(https://i.pinimg.com/originals/e5/89/95/e5899572ecace2b0895b36db7703a001.gif)"
-  }
-
-  if (chosenWepT === "Knife") {
-    knifeload.play();
-  }
-}
-*/
 
 //Counter-Terrorist Weapons
 function weaponct() {
@@ -158,6 +114,17 @@ function weaponct() {
 
 }
 
+if (p90reset == true && counterTerroristSide == false) {
+  document.getElementById('bg').style.backgroundImage = "url(https://steamcdn-a.akamaihd.net/apps/csgo/blog/images/wallpaper_nologo.jpg)";
+  document.getElementById('ctbuttonid').style.backgroundImage = "url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQtkmNj-34BqO0SlUPAMPTOjzjUhiOtTkN97A&usqp=CAU)"
+    p90reset = false;
+
+} if (p90reset == true && counterTerroristSide == true) {
+  document.getElementById('bg').style.backgroundImage = "url(https://steamcdn-a.akamaihd.net/apps/csgo/blog/images/wallpaper_nologo.jpg)";
+  document.getElementById('ctbuttonid').style.backgroundImage = "url(https://vignette1.wikia.nocookie.net/cswikia/images/4/4c/Csgo_CT_icon_alt.png/revision/latest?cb=20151222191721)"
+  p90reset = false;
+}
+
 //M249 Rainbow Text And Music
    if (chosenWep === "M249") {
     m249load.play();
@@ -177,82 +144,15 @@ if (chosenWep === "Knife") {
 }
 if (chosenWep === "P90") {
   p90load.play();
-}
-  }
-
-
-
-/*Bad Weapon Selector
-  if (number == 1) {
-    alert("Glock 18");
-
-  } else if (number == 2) {
-    alert("P250")
-
-  } else if (number == 3) {
-    alert("Tec-9/CZ75-Auto");
-
-  } else if (number == 4) {
-    alert("Dual Berettas");
-
-  } else if (number == 5) {
-    alert("Desert Eagle/R8 Revolver");
-
-  } else if (number == 6) {
-    alert("MAC-10");
-
-  } else if (number == 7) {
-    alert("PP-Bizon");
-
-  } else if (number == 8) {
-    alert("MP7/MP5-SD");
-
-  } else if (number == 9) {
-    alert("UMP-45");
-
-  } else if (number == 10) {
-    alert("P90");
-
-  } else if (number == 11) {
-    alert("Galil AR")
-
-  } else if (number == 12) {
-    alert("AK-47")
-
-  } else if (number == 13) {
-    alert("SG 553");
-
-  } else if (number == 14) {
-    alert("SSG 08")
-
-  } else if (number == 15) {
-    alert("AWP");
-
-  } else if (number == 16) {
-    alert("G3SG1");
-
-  } else if (number == 17) {
-    alert("Nova");
-
-  } else if (number == 18) {
-    alert("XM1014");
-
-  } else if (number == 19) {
-    alert("Sawed-Off");
-
-  } else if (number == 20) {
-    alert("M249");
-
-  } else if (number == 21) {
-    alert("Negev")
-
-  } else if (number == 22) {
-    alert("Knife")
-  }
+  document.getElementById('ctbuttonid').style.backgroundImage = "url(img/csgo/ussr.png)";
+  document.getElementById('bg').style.backgroundImage = "url(img/csgo/ussrbg.jpg)";
+  p90reset = true;
 }
 
-*/
 
+  }
+
+var p90reset;
 
 //Random Map Selector
 function mapdecider() {
@@ -293,16 +193,20 @@ function mapdecider() {
   var age = map9[rand9];
   var off = map10[rand10];
 
-  /*Old Alert Message
-  alert(mir + inf + ove + ver + nuk + tra + dus + cac + age + off);
-  */
   document.getElementById('mapdec').innerHTML = (mir + inf + ove + ver + nuk + tra + dus + cac + age + off);
+
+  if (mir + inf + ove + ver + nuk + tra + dus + cac + age + off === "") {
+    document.getElementById('mapdec').innerHTML = ("Error no maps generated, this is a 1/1024 chance XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
+  }
+}
+
+function spamClickPrev() {
+  alert("You are clicking too fast");
 }
 
 
-
   //Shitbanmanplayer
-  var shitbenmen = new Audio("../sou/csgo/sbm.mp3");
+  var shitbenmen = new Audio("sbm/sbm.mp3");
   function sbm() {
   shitbenmen.play();
 }
